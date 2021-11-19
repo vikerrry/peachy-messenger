@@ -28,6 +28,6 @@ module.exports = {
   processRequest: function (request, response) {
   	const request_url = url.parse(request.url)
   	const query = querystring.parse(request_url.query)
-  	route(request_url.path, query, "", response)
+  	route(request_url.pathname, query, "", response)
   },
 };

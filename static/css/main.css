@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+	margin: 0px;
+	font-family: 'Rubik', sans-serif;
+	background: #3d00e0;
+	color: white;
+	font-size: 20px;
+}
+
+body {
+	min-width: 300px;
+	min-height: 300px;
+}
+
+#welcome_landing {
+	width : max(250px, min(70vw, min(50vh, 300px)));
+	margin: auto;
+}
+
+#welcome_logo {
+	width: 100%;
+}
+
+#welcome_name {
+	width: 100%;
+	text-align: center;
+	font-size: max(50px, min(50px, 10vh));
+}
+
+.center-text {
+	text-align: center;
+
+}
+
+.center-block {
+	margin: auto;
+}
+
+.maximize {
+	width: 100%;
+}
+
+button {
+	background-color: #AA00FF;
+	padding: 10px;
+	border: 3px #AA00FF solid;
+	border-radius: 7px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:active {
+	background-color: #00E676;
+}
+
+.btn-green {
+	background-color: #00C853;
+	border-color: #00C853;
+	color: black;
+}
+
+.btn-small {
+	padding: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#footer {
+	font-size: 15px;
+}
+
+#cookie-agreement {
+	position: absolute;
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	z-index: 1555;
+	display: none;
+	padding: 10px;
+}

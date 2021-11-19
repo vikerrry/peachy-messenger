@@ -7,7 +7,12 @@ module.exports = {
 		path = "." + path;
 		try {
 			if (fs.existsSync(path)) {
-				response.write(fs.readFileSync(path))
+				if (path.endsWith(".html")) {
+					response.setHeader("Content-Type", "text/html; charset=utf-8")
+					response.write(fs.readFileSync(path).toString())
+				} else {
+					response.write(fs.readFileSync(path))
+				}
 			} else {
 				response.statusCode = 404;
 			}
