@@ -1,4 +1,4 @@
-function ready() {
+﻿function ready() {
 	let x = document.querySelectorAll("button")
 	for (let i in x) {
 		!x[i].setAttribute || x[i].setAttribute("onclick", "doit(this)")
