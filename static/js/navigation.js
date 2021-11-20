@@ -1,5 +1,5 @@
 
-var to_hide = ["#welcome_landing", "#join_us", "#login", "#page404"];
+var to_hide = ["#welcome_landing", "#join_us", "#sign_in", "#page404"];
 
 function openWelcome() {
 	app.sub_title = "messenger"
@@ -8,6 +8,7 @@ function openWelcome() {
 
 function openLogin() {
 	app.sub_title = "sign_in_title"
+	document.querySelector("#sign_in").style.display = "block"
 }
 
 function openJoinUs() {
@@ -38,11 +39,11 @@ function showCurrentPage(method = "open") {
 		show404()
 		return
 	}
-	showTitle()
 	if (document.cookie == "") {
 		return
 	}
 	pageNavigation[app.query["do"]][method]()
+	showTitle()
 }
 
 function showTitle() {
@@ -64,7 +65,6 @@ function openPage(url) {
 }
 
 window.onpopstate = function (event) {
-	console.log(event)
     if (event.state) {
     	app = event.state
 		app.query = parseQuery(event.currentTarget.location.href)

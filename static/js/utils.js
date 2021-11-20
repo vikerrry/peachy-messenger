@@ -23,18 +23,16 @@ function deepCopy(obj) {
 	return JSON.parse(JSON.stringify(obj));
 }
 
-function checkNick(ev) {
-	if (RegExp("[A-z0-9\_]{3,}").exec(ev.value)) {
-		ev.classList.remove("input_fail");
-		ev.classList.add("input_ok");
-	} else {
-		ev.classList.remove("input_ok");
-		ev.classList.add("input_fail");
-	}
+function isNickValid(nick) {
+	return RegExp("[A-z0-9\_]{3,}").exec(nick)
 }
 
-function checkPassword(ev) {
-	if (ev.value.match(password_regex) && ev.value.length > 7) {
+function isPasswordValid(pass) {
+	return pass.match(password_regex) && pass.length > 7
+}
+
+function checkInput(ev, validator) {
+	if (validator(ev.value)) {
 		ev.classList.remove("input_fail");
 		ev.classList.add("input_ok");
 	} else {

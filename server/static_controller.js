@@ -14,7 +14,7 @@ module.exports = {
 					response.setHeader("Content-Type", "text; charset=utf-8")
 					response.write(fs.readFileSync(path, "utf-8").toString())
 				} else  {
-					response.write(fs.readFileSync(path, "utf-8"))
+					response.write(fs.readFileSync(path))
 				}
 			} else {
 				response.statusCode = 404;

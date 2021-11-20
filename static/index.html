@@ -81,7 +81,7 @@
 			<div id="signup-nick_desc" style="font-size:15px">
 				от 3 символов: заглавные и строчные буквы английского алфавита, цифры, подчеркивания
 			</div>
-			<input type="text" class="maximize" oninput="checkNick(this)" placeholder="adamthomasmoran"/>
+			<input type="text" class="maximize" oninput="checkInput(this, isNickValid)" placeholder="adamthomasmoran"/>
 			<br>
 			<br>
 			<div id="signup-password">
@@ -90,7 +90,7 @@
 			<div id="signup-pass_desc" style="font-size:15px">
 				от 8 символов, среди которых хотя бы одна цифра и символ из набора #, $, %, !
 			</div>
-			<input type="password" class="maximize" oninput="checkPassword(this)"  placeholder=""/>
+			<input type="password" class="maximize" oninput="checkInput(this, isPasswordValid)"  placeholder=""/>
 			<br>
 			<br>
 			<button id="signup-signup" class="maximize btn-green">
@@ -105,11 +105,37 @@
 			<br>
 		</div>
 	</div>
+	<div id="sign_in">
+		<div class="center-block" style="width: 300px">
+			<br>
+			<button id="signin-main" class="maximize" onclick="openPage('/')">На главную</button>
+			<br>
+			<br>
+			<div id="signin-nick">
+				Никнейм
+			</div>
+			<input type="text" class="maximize" oninput="checkInput(this, isNickValid)" placeholder="adamthomasmoran"/>
+			<br>
+			<br>
+			<div id="signin-password">
+				Пароль
+			</div>
+			<input type="password" class="maximize" oninput="checkInput(this, isPasswordValid)"  placeholder=""/>
+			<br>
+			<br>
+			<button id="signin-signin" class="maximize btn-green">
+				Войти
+			</button>
+			<br>
+			<br>
+		</div>
+	</div>
 </body>
-<div id="footer" class="maximize center-text">
-	&copy; В. В. Прусакова 2021. Выберите язык:
+<div id="footer" class="maximize center-text">Выберите язык:
 	<a href="#" onclick="setLang('ru')" style="font-size:15px">RU</a>
 	<a href="#" onclick="setLang('en')" style="font-size:15px">EN</a>
+	<br>
+	&copy; В. В. Прусакова 2021. 
 	<!-- Отступ в 5 пикселей снизу для эстетического удовольствия -->
 	<div style="width:100%; height:5px"></div>
 </div>

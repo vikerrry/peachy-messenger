@@ -21,6 +21,7 @@ var translation = {
 						 "en": "By pressing \"sign up\" you accept conditions of"},
 	"signup_agree":		{"ru": "пользовательского соглашения",
 						 "en": "terms of use"},
+	"sign_signin":			{"ru": "Войти", "en": "Sign In"},
 }
 
 var page_translate = {
@@ -38,6 +39,10 @@ var page_translate = {
 	"#signup-nick_desc":	"nick_desc",
 	"#signup-desc":			"signup_desc",
 	"#signup-desc_agree":	"signup_agree",
+	"#signin-main":			"to_main",
+	"#signin-nick":			"sign_nick",
+	"#signin-password":		"sign_password",
+	"#signin-signin":		"sign_signin",
 }
 
 var available_langs = ["ru", "en"]
@@ -70,4 +75,5 @@ function setLang(lang) {
 	app.query.lang = lang
 	setLanguage()
 	translatePage()
+	showTitle()
 }

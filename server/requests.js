@@ -1,11 +1,13 @@
 const url = require("url")
 const staticController = require("./static_controller")
+const authController = require("./auth_controller")
 const querystring = require('querystring');
 
 let compile = (reg) => { return new RegExp(reg, 'gi'); }
 
 let RouteRules = [
 	[compile("^\\/$"), staticController.requestFile],
+	[compile("^api/auth$"), staticController.processAuth],
 	[compile("^/static/.*"), staticController.requestFile]
 ];
 
