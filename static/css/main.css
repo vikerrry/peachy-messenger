@@ -53,8 +53,13 @@ button:hover {
 }
 
 button:active {
+	background-color: #6A1B9A;
+}
+
+button.btn-green:active {
 	background-color: #00E676;
 }
+
 
 .btn-green {
 	background-color: #00C853;
@@ -68,6 +73,30 @@ button:active {
 	padding-right: 7px;
 }
 
+input {
+	background-color: white;
+	color: black;
+	border: 3px solid white;
+	border-radius: 7px;
+	user-select: red;
+	outline:none;
+	padding: 2px;
+	margin-top: 5px;
+}
+
+input:active {
+}
+
+.input_ok:focus {
+	border: 2px solid #00C853;
+	padding: 3px;
+}
+
+.input_fail:focus {
+	border: 2px solid #FF1744;
+	padding: 3px;
+}
+
 #footer {
 	font-size: 15px;
 }
@@ -79,4 +108,8 @@ button:active {
 	z-index: 1555;
 	display: none;
 	padding: 10px;
+}
+
+#join_us {
+	display: none;
 }

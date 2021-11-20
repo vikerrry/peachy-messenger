@@ -7,13 +7,30 @@
 	<link rel="stylesheet" href="static/css/main.css">
 </head>
 <body>
+	<script type="text/javascript" src="static/js/utils.js"></script>
+	<script type="text/javascript" src="static/js/translation.js"></script>
+	<script type="text/javascript" src="static/js/navigation.js"></script>
+	<script type="text/javascript" src="static/js/buttons.js"></script>
 	<script type="text/javascript" src="static/js/main.js"></script>
-	<div id="cookie-agreement">
+	<div id="cookie-agreement" class="center-text">
 		<p> Прежде чем пользоваться сайтом, вам необходимо согласиться с <a href="https://www.regus.ru/ru-ru/cookies">политикой использования файлов Cookie</a>.</p>
 		<br>
-		<button class="btn-green btn-small" onclick="cookieAgree()">
+		<button class="btn-green btn-small center-block" onclick="cookieAgree()">
 			Согласен!
 		</button>
+	</div>
+	<div id="page404">
+		<div style="font-size: 50px;" class ="maximize center-text">
+			<br>
+			404 :(
+			<br>
+			<br>
+			<button onclick="mainPage()">
+				На главную
+			</button>
+			<br>
+			<br>
+		</div>
 	</div>
 	<div id="welcome_landing">
 		<img id="welcome_logo" src="static/images/logo_medium.png" />
@@ -26,7 +43,7 @@
 		</div>
 		<br>
 		<div class="center-block">
-			<button class="maximize btn-green" id="join_us" onclick="joinUs()">
+			<button class="maximize btn-green" id="join_us_btn" onclick="joinUsBtn()">
 				Присоединяйтейсь!
 			</button>
 		</div>
@@ -34,17 +51,65 @@
 			или
 		</div>
 		<div class="center-block">
-			<button class="maximize btn-green" id="sign_in" onclick="signIn()">
+			<button class="maximize btn-green" id="sign_in_btn" onclick="signInBtn()">
 				Войдите
 			</button>
 		</div>
 		<br>
 	</div>
+	<div id="join_us">
+		<div class="center-block" style="width: 300px">
+			<br>
+			<button id="signup-main" class="maximize" onclick="openPage('/')">На главную</button>
+			<br>
+			<br>
+			<div id="signup-last-name">
+				Фамилия
+			</div>
+			<input type="text" class="maximize" placeholder="Иванов"/>
+			<br>
+			<br>
+			<div id="signup-name">
+				Имя
+			</div>
+			<input type="text" class="maximize" placeholder="Иван"/>
+			<br>
+			<br>
+			<div id="signup-nick">
+				Никнейм
+			</div>
+			<div id="signup-nick_desc" style="font-size:15px">
+				от 3 символов: заглавные и строчные буквы английского алфавита, цифры, подчеркивания
+			</div>
+			<input type="text" class="maximize" oninput="checkNick(this)" placeholder="adamthomasmoran"/>
+			<br>
+			<br>
+			<div id="signup-password">
+				Пароль
+			</div>
+			<div id="signup-pass_desc" style="font-size:15px">
+				от 8 символов, среди которых хотя бы одна цифра и символ из набора #, $, %, !
+			</div>
+			<input type="password" class="maximize" oninput="checkPassword(this)"  placeholder=""/>
+			<br>
+			<br>
+			<button id="signup-signup" class="maximize btn-green">
+				Зарегистрироваться
+			</button>
+			<div style="margin-top:5px"></div>
+			<div id="signup-desc" style="display:inline;font-size:15px;">
+				Нажимая "зарегистрироваться" вы принимаете условия
+			</div>
+			<a href="#" id="signup-desc_agree" style="font-size:15px">пользовательского соглашения</a>
+			<br>
+			<br>
+		</div>
+	</div>
 </body>
 <div id="footer" class="maximize center-text">
 	&copy; В. В. Прусакова 2021. Выберите язык:
-	<a href="?lang=ru" style="font-size:15px">RU</a>
-	<a href="?lang=en" style="font-size:15px">EN</a>
+	<a href="#" onclick="setLang('ru')" style="font-size:15px">RU</a>
+	<a href="#" onclick="setLang('en')" style="font-size:15px">EN</a>
 	<!-- Отступ в 5 пикселей снизу для эстетического удовольствия -->
 	<div style="width:100%; height:5px"></div>
 </div>
