@@ -23,6 +23,7 @@ function parseSign(args) {
 	}
 	return sign
 }
+
 function parseFunction(args) {
 	let savePos = args[2]
 	let sign = parseSign(args)
@@ -138,15 +139,19 @@ function parseFloat(args) {
 				}
 				break
 		}
+
 		if (error) {
 			break
 		}
+
 		++args[2]
 	}
+
 	if (errorDesc != "no") {
 		args[2] = pos_copy
 		return false
 	}
+
 	return sign * X * Math.pow(10, sign2 * exponent)
 }
 
@@ -181,10 +186,12 @@ function parseOp(args) {
 }
 
 function evalExpr(args) {
-	console.log(1)
+
 	let values = []
 	let ops = []
+
 	while (args[2] <= args[3]) {
+
 		if (args[0][args[2]] == '(') {
 			last_end = args[3]
 			args[3] = args[1][args[2]] - 1
@@ -205,9 +212,11 @@ function evalExpr(args) {
 				return [false, "error at " + args[0].substr(args[2], args[3] - args[2] + 1)]
 			}
 		}
+
 		if (args[2] > args[3]) {
 			break;
 		}
+		
 		let val = parseOp(args)
 		if (val === false) {
 			return [false, "error at " + args[0].substr(args[2], args[3] - args[2] + 1)]
