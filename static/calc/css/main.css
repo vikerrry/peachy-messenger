@@ -1,0 +1,29 @@
+#calc_main {
+	width: min(100% - 10px, 400px);
+	padding: 5px;
+}
+
+#expression{
+	width: calc(100% - 40px);
+	background-color: white;
+	color: black;
+	padding: 20px;
+	border-radius: 7px;;
+	margin-top: 3px;
+	margin-bottom: 10px;
+}
+#result {
+	margin-top: 3px;
+	width: calc(100% - 20px);
+	background-color: white;
+	border-radius: 7px;
+	padding: 10px;
+	color: black;
+}
+.button_block {
+	margin-top: 10px;
+}
+.button_block button {
+	width: min(calc(calc(100% - 45px) / 7), 50px);
+	margin-left: 2px;
+}
